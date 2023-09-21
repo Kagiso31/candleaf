@@ -1,0 +1,47 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.products {
+  padding: f.rem(50) f.rem(15) f.rem(69) f.rem(15);
+
+  @include m.breakpoint(medium) {
+    padding: f.rem(90) 0 f.rem(125) 0;
+  }
+  //   @include m.breakpoint(large) {
+  //     padding: f.rem(90) f.rem(165) f.rem(125) f.rem(165);
+  //   }
+
+  &__text {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: f.rem(69);
+  }
+
+  &__title {
+    color: #0b254b;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    color: #5e6e89;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__container {
+    gap: 20px;
+    max-width: 1111px;
+    margin-inline: auto;
+    display: grid;
+
+    @include m.breakpoint(medium) {
+      gap: 30px;
+      justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    }
+  }
+}

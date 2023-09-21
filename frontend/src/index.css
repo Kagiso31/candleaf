@@ -122,6 +122,9 @@ button {
   position: absolute;
   visibility: hidden;
   opacity: 0;
+  z-index: 1;
+  background-color: white;
+  border-radius: 4px;
 }
 @media (min-width: 40em) {
   .dropdown__content[data-visible=true] {
@@ -133,15 +136,13 @@ button {
     transition: 0.3s ease;
   }
 }
-.dropdown__item {
-  color: black;
-}
 @media (min-width: 40em) {
   .dropdown__item {
     padding: 0.625rem;
   }
 }
 .dropdown__link {
+  color: black;
   text-decoration: none;
 }
 
@@ -206,6 +207,53 @@ button {
 .hamburger[aria-expanded=true] .hamburger__line::after {
   margin-top: 0;
   transform: rotate(-35deg);
+}
+
+.product-card {
+  width: 100%;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 40em) {
+  .product-card {
+    width: 255px;
+  }
+}
+.product-card__image-container {
+  height: 147px;
+  position: relative;
+  background-color: hsl(220, 23%, 97%);
+  overflow-y: hidden;
+}
+@media (min-width: 40em) {
+  .product-card__image-container {
+    height: auto;
+    overflow-y: hidden;
+  }
+}
+.product-card__image {
+  width: 100%;
+  transform: translateY(-10%);
+}
+@media (min-width: 40em) {
+  .product-card__image {
+    transform: translateY(0%);
+  }
+}
+.product-card__text {
+  background-color: #fff;
+  padding: 26px;
+}
+.product-card__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #1d293f;
+  font-weight: 500;
+}
+.product-card__price {
+  color: #56b280;
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
 }
 
 .primary-header {
@@ -368,6 +416,46 @@ button {
   .hero__button {
     width: auto;
     padding-inline: 44px;
+  }
+}
+
+.products {
+  padding: 3.125rem 0.9375rem 4.3125rem 0.9375rem;
+}
+@media (min-width: 40em) {
+  .products {
+    padding: 5.625rem 0 7.8125rem 0;
+  }
+}
+.products__text {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 4.3125rem;
+}
+.products__title {
+  color: #0b254b;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+.products__subtitle {
+  color: #5e6e89;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+.products__container {
+  gap: 20px;
+  max-width: 1111px;
+  margin-inline: auto;
+  display: grid;
+}
+@media (min-width: 40em) {
+  .products__container {
+    gap: 30px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   }
 }
 

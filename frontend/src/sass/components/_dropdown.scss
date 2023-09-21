@@ -13,6 +13,9 @@
     position: absolute;
     visibility: hidden;
     opacity: 0;
+    z-index: 1;
+    background-color: white;
+    border-radius: 4px;
 
     @include m.breakpoint(medium) {
       &[data-visible="true"] {
@@ -27,12 +30,12 @@
     }
   }
   &__item {
-    color: black;
     @include m.breakpoint(medium) {
       padding: f.rem(10);
     }
   }
   &__link {
+    color: black;
     text-decoration: none;
   }
 }

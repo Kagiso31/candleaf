@@ -1,0 +1,51 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.product-card {
+  width: 100%;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+
+  @include m.breakpoint(medium) {
+    width: 255px;
+  }
+
+  &__image-container {
+    height: 147px;
+    position: relative;
+    background-color: hsla(220, 23%, 97%, 1);
+    overflow-y: hidden;
+
+    @include m.breakpoint(medium) {
+      height: auto;
+      overflow-y: hidden;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    transform: translateY(-10%);
+
+    @include m.breakpoint(medium) {
+      transform: translateY(0%);
+    }
+  }
+
+  &__text {
+    background-color: #fff;
+    padding: 26px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #1d293f;
+    font-weight: 500;
+  }
+
+  &__price {
+    color: #56b280;
+    text-align: right;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+  }
+}
