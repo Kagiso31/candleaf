@@ -102,6 +102,15 @@ button {
   font-family: "Roboto", sans-serif;
 }
 
+.btn {
+  border-radius: 4px;
+  background-color: #56b280;
+  color: white;
+  padding-block: 0.5rem;
+  font-size: 1.3125rem;
+  cursor: pointer;
+}
+
 .dropdown__button {
   background-color: transparent;
   padding: 0;
@@ -165,6 +174,7 @@ button {
   background-color: transparent;
   cursor: pointer;
   position: relative;
+  z-index: 2;
 }
 @media (min-width: 40em) {
   .hamburger {
@@ -203,6 +213,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 1.875rem 1.625rem 1.875rem 1.875rem;
+  border-bottom: 1px solid #e5e5e5;
 }
 .primary-header .chevron-down-icon {
   width: 0.625em;
@@ -249,6 +260,8 @@ button {
     transform: translateY(-150%);
     height: 0;
     width: 0;
+    background-color: #fff;
+    z-index: 1;
   }
   .nav__list[data-visible=true] {
     position: absolute;
@@ -257,11 +270,11 @@ button {
     width: 100%;
     padding: 0.6875rem;
     padding-left: 2.5rem;
-    transform: translateY(50%);
+    transform: translateY(48%);
     transition: 0.6s ease;
     visibility: visible;
     height: auto;
-    width: auto;
+    width: 100%;
   }
 }
 @media (min-width: 40em) {
@@ -288,6 +301,56 @@ button {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+.hero__image-container {
+  position: relative;
+  height: 90vh;
+}
+.hero__image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.hero__text-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9375rem;
+  border-radius: 2px;
+  background: rgba(247, 248, 250, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+@media (max-width: 39.99875em) {
+  .hero__text-container {
+    margin: 6.25rem 0.9375rem;
+  }
+}
+@media (max-width: 23.125em) {
+  .hero__text-container {
+    margin: 5rem 0.9375rem;
+  }
+}
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+.hero__description {
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 2.1875rem;
+}
+.hero__button {
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

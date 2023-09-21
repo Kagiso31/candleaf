@@ -2,4 +2,11 @@
 @use "components";
 @use "layout";
 @use "utilities";
-@use "pages";
+@use "pages/Authentication";
+@use "pages/Cart";
+@use "pages/Home";
+@use "pages/NotFound";
+@use "pages/Payment";
+@use "pages/Product";
+@use "pages/Shipping";
+@use "pages/Thanks";

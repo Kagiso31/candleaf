@@ -1,0 +1,10 @@
+@use "../abstracts/functions" as f;
+
+.btn {
+  border-radius: 4px;
+  background-color: #56b280;
+  color: white;
+  padding-block: f.rem(8);
+  font-size: f.rem(21);
+  cursor: pointer;
+}
