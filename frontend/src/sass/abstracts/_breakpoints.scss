@@ -1,0 +1,9 @@
+@use "../abstracts/functions" as f;
+
+$breakpoints: (
+  "xsmall": f.em(370),
+  "small-only": f.em(639.98),
+  "medium": f.em(640),
+  "large": f.em(1024),
+  "xlarge": f.em(1400),
+);

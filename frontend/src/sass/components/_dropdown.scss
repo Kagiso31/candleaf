@@ -1,0 +1,38 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.dropdown {
+  &__button {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: f.rem(5);
+  }
+  &__content {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+
+    @include m.breakpoint(medium) {
+      &[data-visible="true"] {
+        visibility: visible;
+        opacity: 1;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        padding: f.rem(10) f.rem(20) f.rem(10) f.rem(20);
+        transform: translateY(10%);
+        transition: 0.3s ease;
+      }
+    }
+  }
+  &__item {
+    color: black;
+    @include m.breakpoint(medium) {
+      padding: f.rem(10);
+    }
+  }
+  &__link {
+    text-decoration: none;
+  }
+}

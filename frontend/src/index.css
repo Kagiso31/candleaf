@@ -1,3 +1,293 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button {
+  font: inherit;
+  padding: 0;
+  border: none;
+}
+
+#root {
+  isolation: isolate;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-weight: 500;
+}
+
+h1,
+h2 {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+.dropdown__button {
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+}
+.dropdown__content {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+@media (min-width: 40em) {
+  .dropdown__content[data-visible=true] {
+    visibility: visible;
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+    transform: translateY(10%);
+    transition: 0.3s ease;
+  }
+}
+.dropdown__item {
+  color: black;
+}
+@media (min-width: 40em) {
+  .dropdown__item {
+    padding: 0.625rem;
+  }
+}
+.dropdown__link {
+  text-decoration: none;
+}
+
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 126px;
+  height: 34px;
+  order: 2;
+}
+@media (min-width: 40em) {
+  .logo-container {
+    justify-content: flex-start;
+  }
+}
+.logo-container .logo {
+  max-width: 126px;
+}
+@media (min-width: 40em) {
+  .logo-container {
+    order: 1;
+  }
+}
+
+.hamburger {
+  width: 32px;
+  height: 17px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+@media (min-width: 40em) {
+  .hamburger {
+    display: none;
+  }
+}
+.hamburger__line, .hamburger__line::before, .hamburger__line::after {
+  content: "";
+  display: block;
+  background-color: black;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  transition: 0.3s ease;
+}
+.hamburger__line::before {
+  margin-top: -8px;
+}
+.hamburger__line::after {
+  margin-top: 8px;
+}
+.hamburger[aria-expanded=true] .hamburger__line {
+  background: transparent;
+}
+.hamburger[aria-expanded=true] .hamburger__line::before {
+  margin-top: 0;
+  transform: rotate(35deg);
+}
+.hamburger[aria-expanded=true] .hamburger__line::after {
+  margin-top: 0;
+  transform: rotate(-35deg);
+}
+
+.primary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.875rem 1.625rem 1.875rem 1.875rem;
+}
+.primary-header .chevron-down-icon {
+  width: 0.625em;
+}
+.primary-header__icon {
+  cursor: pointer;
+}
+.primary-header__icon path {
+  fill: black;
+}
+.primary-header__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9375rem;
+  order: 3;
+}
+.primary-header__right .cart-icon {
+  width: 23px;
+  height: 23px;
+}
+.primary-header__right .profile-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.nav {
+  order: 1;
+  flex: 1;
+}
+@media (min-width: 40em) {
+  .nav {
+    order: 2;
+    flex: 2;
+  }
+}
+.nav__list {
+  visibility: hidden;
+}
+@media (max-width: 39.99875em) {
+  .nav__list {
+    font-size: 1.5rem;
+    transform: translateY(-150%);
+    height: 0;
+    width: 0;
+  }
+  .nav__list[data-visible=true] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.6875rem;
+    padding-left: 2.5rem;
+    transform: translateY(50%);
+    transition: 0.6s ease;
+    visibility: visible;
+    height: auto;
+    width: auto;
+  }
+}
+@media (min-width: 40em) {
+  .nav__list {
+    visibility: visible;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+@media (max-width: 39.99875em) {
+  .nav__item {
+    padding: 0.6875rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
 
 /*# sourceMappingURL=index.css.map */

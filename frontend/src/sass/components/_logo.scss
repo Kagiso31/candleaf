@@ -1,0 +1,23 @@
+@use "../abstracts/mixins" as m;
+
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 126px;
+  height: 34px;
+  order: 2;
+
+  @include m.breakpoint(medium) {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    max-width: 126px;
+  }
+
+  @include m.breakpoint(medium) {
+    order: 1;
+  }
+}

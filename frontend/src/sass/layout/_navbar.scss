@@ -1,0 +1,49 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.nav {
+  order: 1;
+  flex: 1;
+
+  @include m.breakpoint(medium) {
+    order: 2;
+    flex: 2;
+  }
+
+  &__list {
+    visibility: hidden;
+    @include m.breakpoint(small-only) {
+      font-size: f.rem(24);
+      transform: translateY(-150%);
+      height: 0;
+      width: 0;
+
+      &[data-visible="true"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: f.rem(11);
+        padding-left: f.rem(40);
+        transform: translateY(50%);
+        transition: 0.6s ease;
+        visibility: visible;
+        height: auto;
+        width: auto;
+      }
+    }
+
+    @include m.breakpoint(medium) {
+      visibility: visible;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    @include m.breakpoint(small-only) {
+      padding: f.rem(11);
+    }
+  }
+}

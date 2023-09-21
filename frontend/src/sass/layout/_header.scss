@@ -1,0 +1,37 @@
+@use "../abstracts/functions" as f;
+
+.primary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: f.rem(30) f.rem(26) f.rem(30) f.rem(30);
+  .chevron-down-icon {
+    width: f.em(10);
+  }
+
+  &__icon {
+    cursor: pointer;
+    path {
+      fill: black;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: f.rem(15);
+    order: 3;
+
+    .cart-icon {
+      width: 23px;
+      height: 23px;
+    }
+
+    .profile-icon {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
