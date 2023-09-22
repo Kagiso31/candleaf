@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="primary-header">
+    <header className="primary-header | wrapper">
       <nav className="nav">
         <button
           onClick={toggleNav}

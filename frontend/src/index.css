@@ -305,6 +305,11 @@ button {
   padding: 1.875rem 1.625rem 1.875rem 1.875rem;
   border-bottom: 1px solid #e5e5e5;
 }
+@media (min-width: 87.5em) {
+  .primary-header {
+    padding-inline: 0;
+  }
+}
 .primary-header .chevron-down-icon {
   width: 0.625em;
 }
@@ -446,15 +451,21 @@ button {
   color: #5e6e89;
   text-align: center;
   padding: 2rem 2.625rem;
+}
+@media (min-width: 40em) {
+  .footer__attribution {
+    padding: 2rem 1.5rem;
+  }
+}
+.footer__attribution__container {
   display: flex;
   justify-content: space-between;
   gap: 0.625rem;
   flex-direction: column;
 }
 @media (min-width: 40em) {
-  .footer__attribution {
+  .footer__attribution__container {
     flex-direction: row;
-    padding: 2rem 1.5rem;
   }
 }
 .footer__attribution a {
@@ -471,6 +482,11 @@ button {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin-inline: auto;
 }
 
 .hero__container {
@@ -587,7 +603,7 @@ button {
 }
 @media (min-width: 87.5em) {
   .benefits {
-    padding: 9.4375rem 10.3125rem 5.875rem 10.3125rem;
+    padding: 9.4375rem 0 5.875rem 0;
   }
 }
 .benefits__container {
@@ -679,11 +695,6 @@ button {
 .testimonials {
   background-color: rgba(86, 178, 128, 0.1);
   padding: 5.625rem 1rem 5.625rem 1rem;
-}
-@media (min-width: 87.5em) {
-  .testimonials {
-    padding: 5.625rem;
-  }
 }
 .testimonials__heading {
   text-align: center;

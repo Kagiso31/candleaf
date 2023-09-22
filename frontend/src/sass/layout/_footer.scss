@@ -70,14 +70,17 @@
     color: #5e6e89;
     text-align: center;
     padding: f.rem(32) f.rem(42);
-
-    display: flex;
-    justify-content: space-between;
-    gap: f.rem(10);
-    flex-direction: column;
     @include m.breakpoint(medium) {
-      flex-direction: row;
       padding: f.rem(32) f.rem(24);
+    }
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: f.rem(10);
+      flex-direction: column;
+      @include m.breakpoint(medium) {
+        flex-direction: row;
+      }
     }
 
     a {

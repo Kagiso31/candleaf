@@ -9,7 +9,7 @@ const Hero = () => {
           <source media="(min-width: 1024px)" srcSet={heroImageDesktop} />
           <img className="hero__image" src={heroImage} alt="" />
         </picture>
-        <div className="hero__text-container">
+        <div className="hero__text-container | wrapper">
           <h1 className="hero__title">
             <span>🌱</span>
             <span>The nature candle</span>

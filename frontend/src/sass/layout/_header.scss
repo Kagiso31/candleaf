@@ -1,4 +1,5 @@
 @use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
 
 .primary-header {
   display: flex;
@@ -6,6 +7,10 @@
   align-items: center;
   padding: f.rem(30) f.rem(26) f.rem(30) f.rem(30);
   border-bottom: 1px solid #e5e5e5;
+
+  @include m.breakpoint(xlarge) {
+    padding-inline: 0;
+  }
 
   .chevron-down-icon {
     width: f.em(10);

@@ -6,7 +6,7 @@
   padding: f.rem(119) f.rem(15) f.rem(45) f.rem(15);
 
   @include m.breakpoint(xlarge) {
-    padding: f.rem(151) f.rem(165) f.rem(94) f.rem(165);
+    padding: f.rem(151) 0 f.rem(94) 0;
   }
 
   &__container {

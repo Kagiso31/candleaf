@@ -5,9 +5,6 @@
   background-color: rgba(86, 178, 128, 0.1);
 
   padding: f.rem(90) f.rem(16) f.rem(90) f.rem(16);
-  @include m.breakpoint(xlarge) {
-    padding: f.rem(90);
-  }
 
   &__heading {
     text-align: center;
