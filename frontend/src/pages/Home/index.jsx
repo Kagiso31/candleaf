@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar";
+import Benefits from "./Benefits";
 import Hero from "./Hero";
 import Products from "./Products";
 
@@ -8,6 +9,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Products />
+      <Benefits />
     </>
   );
 };
