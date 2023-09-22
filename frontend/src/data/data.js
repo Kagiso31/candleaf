@@ -24,6 +24,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: ["popular"],
   },
   {
     id: 2,
@@ -37,6 +38,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: ["popular"],
   },
   {
     id: 3,
@@ -50,6 +52,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: ["popular"],
   },
   {
     id: 4,
@@ -63,6 +66,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: ["popular"],
   },
   {
     id: 5,
@@ -76,6 +80,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: [""],
   },
   {
     id: 6,
@@ -89,6 +94,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: [""],
   },
   {
     id: 7,
@@ -102,6 +108,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: [""],
   },
   {
     id: 8,
@@ -115,6 +122,7 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+    tags: [""],
   },
 ];
 
