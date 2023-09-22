@@ -1,0 +1,87 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: f.rem(60) 0 f.rem(110) 0;
+
+  @include m.breakpoint(small-only) {
+    padding: f.rem(60) f.rem(17) f.rem(110) f.rem(17);
+  }
+
+  &__container {
+    display: grid;
+    gap: f.rem(40);
+    @include m.breakpoint(medium) {
+      gap: 0;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__separator {
+    width: 100%;
+    background-color: white;
+    height: 1.5px;
+    margin-bottom: f.rem(14);
+  }
+
+  &__logo-container {
+    max-width: 248px;
+  }
+
+  &__logo {
+    width: 141px;
+    height: 38px;
+    @include m.breakpoint(medium) {
+      width: 236px;
+      height: 63px;
+    }
+  }
+
+  &__slogan {
+    font-weight: 400;
+  }
+
+  &__nav {
+    &-list {
+      display: grid;
+      gap: f.rem(20);
+      grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+    }
+
+    &__section {
+      display: grid;
+      gap: f.rem(25);
+      &-title {
+        color: #56b280;
+        font-weight: 500;
+      }
+    }
+
+    &__link {
+      font-weight: 500;
+      color: white;
+    }
+  }
+  &__attribution {
+    font-size: f.rem(14);
+    background-color: #e5e5e5;
+    color: #5e6e89;
+    text-align: center;
+    padding: f.rem(32) f.rem(42);
+
+    display: flex;
+    justify-content: space-between;
+    gap: f.rem(10);
+    flex-direction: column;
+    @include m.breakpoint(medium) {
+      flex-direction: row;
+      padding: f.rem(32) f.rem(24);
+    }
+
+    a {
+      color: #56b280;
+    }
+  }
+}

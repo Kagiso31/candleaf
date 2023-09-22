@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import Popular from "./Popular";
 import Products from "./Products";
 import Testimonials from "./Testimonials";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Benefits />
       <Testimonials />
       <Popular />
+      <Footer />
     </>
   );
 };
