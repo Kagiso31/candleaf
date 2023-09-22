@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import Benefits from "./Benefits";
 import Hero from "./Hero";
 import Products from "./Products";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Products />
       <Benefits />
+      <Testimonials />
     </>
   );
 };

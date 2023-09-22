@@ -1,0 +1,46 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.testimonial-card {
+  width: f.rem(350);
+  background-color: white;
+  display: grid;
+  justify-items: center;
+  padding: f.rem(32);
+  border-radius: 5px;
+
+  &__image-container {
+    width: f.rem(84);
+    height: f.rem(84);
+    border-radius: 50%;
+    margin-bottom: f.rem(14);
+  }
+  &__image {
+    border-radius: 50%;
+    width: 100%;
+  }
+  &__rating {
+    display: flex;
+    gap: f.rem(7);
+    margin-bottom: f.rem(22);
+  }
+  &__star-icon {
+    width: f.rem(24);
+    height: f.rem(24);
+
+    path {
+      fill: #5bc08a;
+    }
+  }
+
+  &__comment {
+    font-weight: 500;
+    font-size: f.rem(22);
+    text-align: center;
+  }
+  &__name {
+    font-weight: 400;
+    color: #7c8087;
+    font-size: f.rem(18);
+  }
+}

@@ -7,6 +7,10 @@ import fragrantCinnamon from "../assets/products/fragrant-cinnamon.png";
 import summerCherries from "../assets/products/summer-cherries.png";
 import cleanLavender from "../assets/products/clean-lavender.png";
 
+import testimonialImg1 from "../assets/testimonial-1.jpg";
+import testimonialImg2 from "../assets/testimonial-2.jpg";
+import testimonialImg3 from "../assets/testimonial-3.jpg";
+
 export const products = [
   {
     id: 1,
@@ -111,5 +115,29 @@ export const products = [
       dimension: "10cm x 5cm ",
       weight: "400g ",
     },
+  },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    img: testimonialImg1,
+    rating: 4.5,
+    comment: "I love it! No more air fresheners",
+    name: "Vanessa",
+  },
+  {
+    id: 2,
+    img: testimonialImg2,
+    rating: 5,
+    comment: "Recommended for everyone",
+    name: "Miles",
+  },
+  {
+    id: 3,
+    img: testimonialImg3,
+    rating: 4.5,
+    comment: "Looks very natural, the smell is awesome",
+    name: "Michelle",
   },
 ];
