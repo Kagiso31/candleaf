@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo-light.jpg";
 import { useState } from "react";
 
@@ -80,9 +80,9 @@ const Navbar = () => {
       </nav>
 
       <div className="logo-container">
-        <NavLink className="logo-link" to="#">
+        <Link className="logo-link" to="/candleaf">
           <img className="logo" src={logo} alt="logo" />
-        </NavLink>
+        </Link>
       </div>
 
       <div className="primary-header__right">
