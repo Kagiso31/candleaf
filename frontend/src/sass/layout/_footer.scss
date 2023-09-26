@@ -4,11 +4,7 @@
 .footer {
   background-color: black;
   color: white;
-  padding: f.rem(60) 0 f.rem(110) 0;
-
-  @include m.breakpoint(small-only) {
-    padding: f.rem(60) f.rem(17) f.rem(110) f.rem(17);
-  }
+  padding: f.rem(60) f.rem(17) f.rem(110) f.rem(17);
 
   &__container {
     display: grid;
@@ -33,6 +29,7 @@
   &__logo {
     width: 141px;
     height: 38px;
+    margin-bottom: f.rem(14);
     @include m.breakpoint(medium) {
       width: 236px;
       height: 63px;

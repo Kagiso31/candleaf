@@ -1,0 +1,30 @@
+.quantity {
+  width: 75px;
+  height: 30px;
+  border: 1px solid #56b280;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+
+  &__button {
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  &__icon {
+    width: 80%;
+  }
+
+  &__icon.bi-dash {
+    color: #a7a7a7;
+  }
+  &__icon.bi-plus {
+    color: #56b280;
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+  }
+}

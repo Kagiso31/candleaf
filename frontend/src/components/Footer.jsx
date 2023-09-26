@@ -82,7 +82,7 @@ const Footer = () => {
             Designed by <a href="https://www.figma.com/@uxbly">uxbly</a> |
             Created by{" "}
             <a href="https:/www.github.com/Kagiso31">
-              @Kagiso31<i className="bi bi-github"></i>
+              Kagiso31<i className="bi bi-github"></i>
             </a>
           </p>
         </div>

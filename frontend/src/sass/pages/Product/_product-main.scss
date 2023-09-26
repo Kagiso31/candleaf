@@ -1,0 +1,158 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.product {
+  padding: f.rem(21) f.rem(16);
+
+  @include m.breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: f.rem(48);
+    padding-bottom: f.rem(114);
+    gap: f.rem(30);
+  }
+
+  &__image-container {
+    margin-bottom: f.rem(20);
+    @include m.breakpoint(medium) {
+      margin-bottom: f.rem(22);
+    }
+  }
+
+  &__image {
+    background-color: #f7f8fa;
+  }
+
+  &__description {
+    text-align: center;
+    font-weight: 500;
+    font-size: f.rem(22);
+
+    span {
+      display: block;
+      margin-top: f.rem(24);
+      color: #56b280;
+      text-transform: uppercase;
+    }
+  }
+  &__description.mobile-only {
+    @include m.breakpoint(small-only) {
+      display: block;
+      margin-top: f.rem(35);
+    }
+    display: none;
+  }
+  &__description.hide-on-mobile {
+    @include m.breakpoint(small-only) {
+      display: none;
+    }
+    display: block;
+  }
+
+  &__name {
+    font-size: f.rem(28);
+    font-weight: 500;
+  }
+  &__name.mobile-only {
+    @include m.breakpoint(small-only) {
+      display: block;
+      margin-bottom: f.rem(20);
+    }
+    display: none;
+  }
+  &__name.hide-on-mobile {
+    @include m.breakpoint(small-only) {
+      display: none;
+    }
+    display: block;
+  }
+
+  &__price {
+    color: #56b280;
+    font-family: "Poppins", sans-serif;
+    font-size: f.rem(26);
+    font-weight: 600;
+  }
+
+  &__quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__quantity__text {
+    font-size: f.rem(18);
+  }
+
+  &__quantity-price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    @include m.breakpoint(large) {
+      grid-template-columns: 1fr;
+      align-items: baseline;
+    }
+  }
+
+  &__order-details {
+    @include m.breakpoint(large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  &__button-container {
+    @include m.breakpoint(medium) {
+      display: flex;
+      justify-content: start;
+    }
+    @include m.breakpoint(large) {
+      justify-content: end;
+    }
+  }
+  &__button {
+    margin-top: f.rem(64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: f.rem(10);
+    margin-bottom: f.rem(40);
+    padding-block: f.rem(10);
+    border-radius: 4px;
+    background-color: #56b280;
+    color: white;
+    width: 100%;
+
+    .add-to-cart-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include m.breakpoint(medium) {
+      width: 350px;
+    }
+  }
+  &__specifications {
+    padding: f.rem(22);
+    border-radius: 7px;
+    border: 1px solid #e6e6e6;
+    color: #849a8e;
+
+    @include m.breakpoint(medium) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    p {
+      @include m.breakpoint(medium) {
+        display: inline-block;
+        width: fit-content;
+        font-size: 14px;
+      }
+    }
+    span {
+      color: #1d252c;
+      font-weight: 600;
+    }
+  }
+}

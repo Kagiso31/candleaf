@@ -298,6 +298,33 @@ button {
   font-size: 1.125rem;
 }
 
+.quantity {
+  width: 75px;
+  height: 30px;
+  border: 1px solid #56b280;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+}
+.quantity__button {
+  cursor: pointer;
+  background-color: transparent;
+}
+.quantity__icon {
+  width: 80%;
+}
+.quantity__icon.bi-dash {
+  color: #a7a7a7;
+}
+.quantity__icon.bi-plus {
+  color: #56b280;
+}
+.quantity__text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .primary-header {
   display: flex;
   justify-content: space-between;
@@ -389,12 +416,7 @@ button {
 .footer {
   background-color: black;
   color: white;
-  padding: 3.75rem 0 6.875rem 0;
-}
-@media (max-width: 39.99875em) {
-  .footer {
-    padding: 3.75rem 1.0625rem 6.875rem 1.0625rem;
-  }
+  padding: 3.75rem 1.0625rem 6.875rem 1.0625rem;
 }
 .footer__container {
   display: grid;
@@ -418,6 +440,7 @@ button {
 .footer__logo {
   width: 141px;
   height: 38px;
+  margin-bottom: 0.875rem;
 }
 @media (min-width: 40em) {
   .footer__logo {
@@ -753,6 +776,230 @@ button {
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   }
+}
+
+.subscription {
+  /* The container */
+  /* Hide the browser's default radio button */
+  /* Create a custom radio button */
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  /* Show the indicator (dot/circle) when checked */
+}
+@media (min-width: 40em) {
+  .subscription {
+    width: 350px;
+  }
+}
+.subscription__group {
+  padding: 1.25rem;
+}
+.subscription__group:last-child {
+  border-radius: 7px;
+  border: 1px solid #e6e6e6;
+}
+.subscription__label {
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 0.375rem;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  user-select: none;
+}
+.subscription__label .subscription__radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.subscription .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 3px solid #dbdbdb;
+}
+.subscription__label:hover .subscription__radio ~ .checkmark {
+  background-color: #ccc;
+}
+.subscription__label .subscription__radio:checked ~ .checkmark {
+  background-color: #56b280;
+}
+.subscription__label .subscription__radio:checked ~ .checkmark:after {
+  display: block;
+}
+.subscription__desc {
+  color: #818181;
+  font-family: Helvetica;
+}
+.subscription__desc span {
+  color: #56b280;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.product {
+  padding: 1.3125rem 1rem;
+}
+@media (min-width: 40em) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3rem;
+    padding-bottom: 7.125rem;
+    gap: 1.875rem;
+  }
+}
+.product__image-container {
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 40em) {
+  .product__image-container {
+    margin-bottom: 1.375rem;
+  }
+}
+.product__image {
+  background-color: #f7f8fa;
+}
+.product__description {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.375rem;
+}
+.product__description span {
+  display: block;
+  margin-top: 1.5rem;
+  color: #56b280;
+  text-transform: uppercase;
+}
+.product__description.mobile-only {
+  display: none;
+}
+@media (max-width: 39.99875em) {
+  .product__description.mobile-only {
+    display: block;
+    margin-top: 2.1875rem;
+  }
+}
+.product__description.hide-on-mobile {
+  display: block;
+}
+@media (max-width: 39.99875em) {
+  .product__description.hide-on-mobile {
+    display: none;
+  }
+}
+.product__name {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.product__name.mobile-only {
+  display: none;
+}
+@media (max-width: 39.99875em) {
+  .product__name.mobile-only {
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+}
+.product__name.hide-on-mobile {
+  display: block;
+}
+@media (max-width: 39.99875em) {
+  .product__name.hide-on-mobile {
+    display: none;
+  }
+}
+.product__price {
+  color: #56b280;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+.product__quantity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product__quantity__text {
+  font-size: 1.125rem;
+}
+.product__quantity-price {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+@media (min-width: 64em) {
+  .product__quantity-price {
+    grid-template-columns: 1fr;
+    align-items: baseline;
+  }
+}
+@media (min-width: 64em) {
+  .product__order-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 40em) {
+  .product__button-container {
+    display: flex;
+    justify-content: start;
+  }
+}
+@media (min-width: 64em) {
+  .product__button-container {
+    justify-content: end;
+  }
+}
+.product__button {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 2.5rem;
+  padding-block: 0.625rem;
+  border-radius: 4px;
+  background-color: #56b280;
+  color: white;
+  width: 100%;
+}
+.product__button .add-to-cart-icon {
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 40em) {
+  .product__button {
+    width: 350px;
+  }
+}
+.product__specifications {
+  padding: 1.375rem;
+  border-radius: 7px;
+  border: 1px solid #e6e6e6;
+  color: #849a8e;
+}
+@media (min-width: 40em) {
+  .product__specifications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+@media (min-width: 40em) {
+  .product__specifications p {
+    display: inline-block;
+    width: fit-content;
+    font-size: 14px;
+  }
+}
+.product__specifications span {
+  color: #1d252c;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=index.css.map */
