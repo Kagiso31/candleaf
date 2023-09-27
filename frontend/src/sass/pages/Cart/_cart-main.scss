@@ -1,0 +1,177 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.cart {
+  padding-top: f.rem(60);
+  padding-bottom: f.rem(120);
+  padding-inline: f.rem(12);
+
+  @include m.breakpoint(xlarge) {
+    padding-inline: 0;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: f.rem(24);
+    margin-bottom: f.rem(64);
+  }
+
+  &__title {
+    font-size: f.rem(26);
+    font-weight: 500;
+  }
+
+  &__link {
+    color: #56b280;
+    text-decoration: underline;
+  }
+
+  &__table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: end;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: f.rem(12);
+    @include m.breakpoint(medium) {
+      grid-template-columns: 2fr repeat(3, 1fr);
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  &__table-cell:first-child {
+    justify-self: start;
+  }
+
+  &__table-cell:last-child {
+    justify-self: end;
+  }
+
+  &__table-cell.hide-on-mobile {
+    @include m.breakpoint(small-only) {
+      display: none;
+    }
+  }
+
+  &__product-row {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    border-bottom: 1px solid #e5e5e5;
+    padding-block: f.rem(32);
+
+    @include m.breakpoint(medium) {
+      grid-template-columns: 2fr repeat(3, 1fr);
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  &__product {
+    display: flex;
+  }
+
+  &__product-image-container {
+    max-width: 160px;
+    padding-inline: f.rem(12);
+  }
+
+  &__product-image {
+    background-color: #f7f8fa;
+  }
+
+  &__product-info {
+  }
+
+  &__product-name {
+    font-weight: 500;
+    font-size: f.rem(20);
+  }
+
+  &__product-remove {
+    font-size: f.rem(18);
+    color: #56b280;
+    text-decoration: underline;
+  }
+
+  &__product-price {
+    font-size: f.rem(18);
+    font-weight: 500;
+
+    @include m.breakpoint(small-only) {
+      justify-self: end;
+    }
+  }
+  &__product-quantity {
+    @include m.breakpoint(small-only) {
+      justify-self: end;
+      grid-column: 2;
+    }
+
+    .mobile-only {
+      display: block;
+
+      @include m.breakpoint(medium) {
+        display: none;
+      }
+    }
+  }
+  &__product-total {
+    font-size: f.rem(18);
+    font-weight: 500;
+    justify-self: end;
+  }
+  &__product-total.hide-on-mobile {
+    @include m.breakpoint(small-only) {
+      display: none;
+    }
+  }
+  &__checkout-section {
+    display: flex;
+    margin-top: f.rem(42);
+    flex-direction: column;
+
+    @include m.breakpoint(medium) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      gap: f.rem(70);
+    }
+  }
+
+  &__subtotal-container {
+    display: flex;
+    font-size: f.rem(20);
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    justify-content: space-around;
+    margin-bottom: f.rem(16);
+
+    @include m.breakpoint(medium) {
+      justify-content: flex-end;
+      gap: f.rem(60);
+    }
+  }
+
+  &__subtotal-text {
+  }
+
+  &__tax-text {
+    color: #9e9e9e;
+    text-align: center;
+
+    @include m.breakpoint(medium) {
+      text-align: right;
+    }
+  }
+
+  &__button {
+    margin-top: f.rem(36);
+
+    @include m.breakpoint(medium) {
+      margin-top: 0;
+      width: 183px;
+    }
+  }
+}

@@ -1,5 +1,15 @@
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import CartMain from "./CartMain";
+
 const Cart = () => {
-  return <div>Cart</div>;
+  return (
+    <>
+      <Navbar />
+      <CartMain />
+      <Footer />
+    </>
+  );
 };
 
 export default Cart;

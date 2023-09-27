@@ -16,7 +16,11 @@ const ProductMain = () => {
       </h1>
       <div className="product__image-desc">
         <div className="product__image-container">
-          <img className="product__image" src={product.img} alt="spiced-mint" />
+          <img
+            className="product__image"
+            src={product.img}
+            alt={product.title}
+          />
         </div>
         <p className="product__description hide-on-mobile">
           All hand-made with natural soy wax, Candleaf is made for your pleasure
@@ -39,7 +43,7 @@ const ProductMain = () => {
           <Subscription />
         </div>
         <div className="product__button-container">
-          <button className="product__button">
+          <button className="product__button btn btn-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"

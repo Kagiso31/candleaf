@@ -117,7 +117,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="cart-container">
-          <NavLink to="/cart">
+          <NavLink to="/candleaf/cart">
             <span className="visually-hidden">Cart</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
