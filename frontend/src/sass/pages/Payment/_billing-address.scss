@@ -1,0 +1,73 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.billing {
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(20);
+    font-weight: 500;
+    margin-bottom: f.rem(23);
+  }
+
+  &__container {
+    border-radius: 7px;
+    border: 1px solid #e5e5e5;
+    padding: f.rem(20) f.rem(18);
+  }
+  &__separator {
+    margin-block: f.rem(20);
+    border-top: 1px solid #81818140;
+  }
+  &__same-address {
+  }
+  &__radio {
+  }
+
+  &__different-address {
+  }
+
+  /* The container */
+  &__label {
+    position: relative;
+    padding-left: f.rem(30);
+    padding-right: f.rem(6);
+    cursor: pointer;
+    font-family: Helvetica;
+    font-size: f.rem(14);
+    user-select: none;
+  }
+
+  /* Hide the browser's default radio button */
+  &__label &__radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 3px solid #dbdbdb;
+  }
+
+  /* On mouse-over, add a grey background color */
+  &__label:hover &__radio ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  &__label &__radio:checked ~ .checkmark {
+    background-color: #56b280;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  &__label &__radio:checked ~ .checkmark:after {
+    display: block;
+  }
+}

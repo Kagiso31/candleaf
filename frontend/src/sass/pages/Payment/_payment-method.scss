@@ -1,0 +1,101 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.payment-method {
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(20);
+    font-weight: 500;
+    margin-bottom: f.rem(23);
+  }
+
+  &__card-heading-container {
+    background: linear-gradient(to right, #56b28033, #56b28066);
+    border-radius: 7px 7px 0 0;
+    padding: f.rem(14) f.rem(21);
+
+    @include m.breakpoint(medium) {
+      display: flex;
+      align-items: center;
+      gap: f.rem(23);
+    }
+  }
+
+  &__card-heading {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(16);
+    font-weight: 700;
+    color: #56b280;
+  }
+  &__card-icon {
+    width: 31px;
+    height: 31px;
+    path {
+      fill: #56b280;
+    }
+  }
+
+  &__card {
+    border-radius: 0 0 7px 7px;
+
+    @include m.breakpoint(medium) {
+      border: 1px solid #e5e5e5;
+      padding: f.rem(24) f.rem(18) f.rem(30);
+    }
+  }
+  &__lock-icon {
+    width: 18px;
+    height: 18px;
+    path {
+      fill: #616161;
+    }
+  }
+  &__info-icon {
+    width: 18px;
+    height: 18px;
+    path {
+      fill: #616161;
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: f.rem(12) f.rem(9);
+    grid-template-areas: "cardnumber cardnumber" "holdername holdername" "expiration cvv";
+
+    &-group:nth-child(1) {
+      grid-area: cardnumber;
+    }
+    &-group:nth-child(2) {
+      grid-area: holdername;
+    }
+    &-group:nth-child(3) {
+      grid-area: expiration;
+    }
+    &-group:nth-child(4) {
+      grid-area: cvv;
+    }
+
+    &-group {
+      div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border: 0.5px solid #898989;
+        padding-right: f.rem(10);
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    color: #616161;
+    font-family: "Helvetica", sans-serif;
+    font-size: f.rem(14);
+    padding-block: f.rem(7);
+    padding-left: f.rem(17);
+  }
+  &__input.no-icon {
+    border: 0.5px solid #898989;
+  }
+}

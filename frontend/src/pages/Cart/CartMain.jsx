@@ -14,8 +14,8 @@ const CartMain = () => {
       <div className="cart__table-header">
         <div className="cart__table-cell">Product</div>
         <div className="cart__table-cell">Price</div>
-        <div className="cart__table-cell hide-on-mobile">Quantity</div>
-        <div className="cart__table-cell hide-on-mobile">Total</div>
+        <div className="cart__table-cell | hide-on-mobile">Quantity</div>
+        <div className="cart__table-cell | hide-on-mobile">Total</div>
       </div>
 
       <CartProduct />

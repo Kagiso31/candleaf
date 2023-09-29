@@ -49,12 +49,6 @@
     justify-self: end;
   }
 
-  &__table-cell.hide-on-mobile {
-    @include m.breakpoint(small-only) {
-      display: none;
-    }
-  }
-
   &__product-row {
     display: grid;
     grid-template-columns: 2fr 0.5fr;
@@ -121,11 +115,6 @@
     font-size: f.rem(18);
     font-weight: 500;
     justify-self: end;
-  }
-  &__product-total.hide-on-mobile {
-    @include m.breakpoint(small-only) {
-      display: none;
-    }
   }
   &__checkout-section {
     display: flex;

@@ -1,0 +1,64 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.shipping-info {
+  border-radius: 7px;
+  border: 1px solid #56b28033;
+  margin-top: f.rem(48);
+
+  padding: f.rem(21) f.rem(16) f.rem(21) f.rem(28);
+
+  @include m.breakpoint(small-only) {
+    padding: f.rem(21) f.rem(16) f.rem(21) f.rem(16);
+  }
+
+  hr {
+    border: 1px solid #56b28033;
+  }
+
+  &__contact-container,
+  &__address-container,
+  &__method-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 0.5fr;
+    justify-items: start;
+    align-items: center;
+    @include m.breakpoint(small-only) {
+      column-gap: f.rem(8);
+    }
+  }
+
+  &__contact-container {
+    padding-bottom: f.rem(10);
+  }
+
+  &__contact-title,
+  &__address-title,
+  &__method-title,
+  &__contact,
+  &__address,
+  &__method {
+    font-family: "Helvetica", sans-serif;
+    font-size: f.rem(14);
+    font-weight: 400;
+  }
+
+  &__contact-title,
+  &__address-title {
+    color: #818181;
+  }
+
+  &__address-container {
+    padding-top: f.rem(10);
+  }
+
+  &__method-container {
+    padding-top: f.rem(10);
+  }
+
+  &__link {
+    color: #56b280;
+    font-family: "Helvetica", sans-serif;
+    font-size: f.rem(14);
+  }
+}

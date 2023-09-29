@@ -1,0 +1,128 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.summary {
+  background: #f2f2f2;
+  position: absolute;
+  width: 50vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: f.rem(65);
+
+  &__wrapper {
+    max-width: 450px;
+  }
+
+  &__product {
+    display: flex;
+    gap: f.rem(60);
+    padding-bottom: f.rem(53);
+    border-bottom: 1px solid rgba(86, 178, 128, 0.2);
+  }
+
+  &__image-container {
+    width: fit-content;
+    position: relative;
+  }
+
+  &__image {
+    width: 160px;
+    height: 120px;
+    background-color: #f7f8fa;
+  }
+
+  &__item-count {
+    position: absolute;
+    display: grid;
+    place-content: center;
+    width: 22px;
+    height: 22px;
+    background-color: #56b280;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    border-radius: 50%;
+    right: 0;
+    top: 0;
+    transform: translateX(50%) translateY(-50%);
+  }
+
+  &__product-info {
+    display: flex;
+    flex-direction: column;
+    gap: f.rem(20);
+  }
+
+  &__product-name {
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+  }
+
+  &__product-price {
+    color: #56b280;
+    font-family: "Poppins", sans-serif;
+    font-size: f.rem(21);
+    font-weight: 600;
+  }
+
+  &__coupon-container {
+    display: flex;
+    gap: f.rem(10);
+    margin-block: f.rem(28);
+  }
+
+  &__coupon-input {
+    flex: 3;
+    color: #616161;
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(14);
+    padding: f.rem(7) f.rem(17);
+    border: 0.5px solid #898989;
+  }
+
+  &__coupon-button {
+    flex: 1;
+    border-radius: 4px;
+    background: #a8a8a8;
+    padding: f.rem(10) f.rem(18);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(17.65);
+  }
+
+  &__subtotal-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: f.rem(12);
+    padding-top: f.rem(15);
+    border-top: 1px solid rgba(86, 178, 128, 0.2);
+  }
+
+  &__shipping-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: f.rem(33);
+    border-bottom: 1px solid rgba(86, 178, 128, 0.2);
+  }
+
+  &__shipping-text,
+  &__shipping-amount,
+  &__subtotal-amount,
+  &__subtotal-text,
+  &__total-text {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(14);
+  }
+
+  &__total-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: f.rem(15);
+  }
+
+  &__total-amount {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(24);
+    font-weight: 500;
+  }
+}

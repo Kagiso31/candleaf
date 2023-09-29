@@ -24,7 +24,7 @@ const CartProduct = () => {
         <p className="mobile-only">Quantity</p>
         <Quantity />
       </div>
-      <div className="cart__product-total hide-on-mobile">$9.99</div>
+      <div className="cart__product-total | hide-on-mobile">$9.99</div>
     </div>
   );
 };

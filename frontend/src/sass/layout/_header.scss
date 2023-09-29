@@ -8,7 +8,7 @@
   padding: f.rem(30) f.rem(26) f.rem(30) f.rem(30);
   border-bottom: 1px solid #e5e5e5;
 
-  @include m.breakpoint(xlarge) {
+  @include m.breakpoint(large) {
     padding-inline: 0;
   }
 

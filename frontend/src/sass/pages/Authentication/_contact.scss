@@ -1,0 +1,54 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.contact {
+  margin-top: f.rem(44);
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: f.rem(12);
+  }
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(20);
+  }
+
+  &__account {
+    font-size: f.rem(14);
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+
+    a {
+      color: #56b280;
+    }
+  }
+
+  &__form {
+    &-group {
+    }
+
+    &-group:last-child {
+      display: flex;
+      align-items: center;
+      gap: f.rem(7);
+    }
+  }
+
+  &__contact-input {
+    width: 100%;
+    font-size: f.rem(14);
+    font-family: Helvetica;
+    padding: f.rem(7) f.rem(14);
+    border: 1px solid #56b280;
+    color: #616161;
+    margin-bottom: f.rem(10);
+  }
+  &__newsletter-label {
+    font-size: f.rem(14);
+    font-family: Helvetica;
+  }
+  &__newsletter-checkbox {
+    accent-color: #73bf95;
+  }
+}

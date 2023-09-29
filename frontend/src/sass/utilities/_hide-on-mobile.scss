@@ -1,0 +1,13 @@
+@use "../abstracts/mixins" as m;
+
+.hide-on-mobile {
+  display: none;
+  @include m.breakpoint(large) {
+    display: block;
+  }
+}
+.hide-on-mobile {
+  @include m.breakpoint(small-only) {
+    display: none;
+  }
+}

@@ -22,14 +22,14 @@ const ProductMain = () => {
             alt={product.title}
           />
         </div>
-        <p className="product__description hide-on-mobile">
+        <p className="product__description | hide-on-mobile">
           All hand-made with natural soy wax, Candleaf is made for your pleasure
           moments. <span>🚚 Free Shipping</span>
         </p>
       </div>
 
       <div>
-        <h1 className="product__name hide-on-mobile">
+        <h1 className="product__name | hide-on-mobile">
           {product.title} Candleaf&reg;
         </h1>
         <div className="product__order-details">

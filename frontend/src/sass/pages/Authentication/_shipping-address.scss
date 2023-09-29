@@ -1,0 +1,137 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.shipping-address {
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(20);
+    margin-bottom: f.rem(22);
+  }
+
+  &__form {
+    @include m.breakpoint(medium) {
+      display: grid;
+      column-gap: f.rem(13);
+      align-items: center;
+      grid-template-areas:
+        "firstname firstname lastname lastname"
+        "address address address address"
+        "shippingnote shippingnote shippingnote shippingnote"
+        "city postalcode postalcode province"
+        "country country country country"
+        "saveinfo saveinfo saveinfo saveinfo";
+
+      &-group:nth-of-type(1) {
+        grid-area: firstname;
+      }
+      &-group:nth-of-type(2) {
+        grid-area: lastname;
+      }
+      &-group:nth-of-type(3) {
+        grid-area: address;
+      }
+      &-group:nth-of-type(4) {
+        grid-area: shippingnote;
+      }
+      &-group:nth-of-type(5) {
+        grid-area: city;
+      }
+      &-group:nth-of-type(6) {
+        grid-area: postalcode;
+      }
+      &-group:nth-of-type(7) {
+        grid-area: province;
+      }
+      &-group:nth-of-type(8) {
+        grid-area: country;
+      }
+      &-group:nth-of-type(9) {
+        grid-area: saveinfo;
+      }
+    }
+
+    &-group {
+      margin-bottom: f.rem(9);
+    }
+    &-group:last-of-type {
+      display: flex;
+      align-items: center;
+      gap: f.rem(7);
+      margin-top: f.rem(32);
+      margin-bottom: f.rem(32);
+    }
+  }
+
+  &__input {
+    color: #616161;
+    font-family: Helvetica;
+    font-size: f.rem(14);
+    border: 1px solid #898989;
+    width: 100%;
+    padding: f.rem(7) f.rem(13);
+  }
+
+  &__dropdown {
+    padding: f.rem(7) f.rem(13);
+    border: 1px solid #898989;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 70%;
+      width: 0.25px;
+      background-color: #89898980;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 40px;
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      color: #616161;
+      font-family: Helvetica;
+      font-size: f.rem(10);
+    }
+
+    select {
+      border: transparent;
+      font-family: Helvetica;
+      font-size: f.rem(14);
+      padding-top: f.rem(7);
+      width: 100%;
+    }
+  }
+
+  &__form__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: f.rem(25);
+
+    @include m.breakpoint(medium) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__checkbox {
+    accent-color: #73bf95;
+  }
+
+  &__checkbox-label {
+    font-family: Helvetica;
+    font-size: f.rem(14);
+  }
+
+  &__button {
+    padding-block: f.rem(5);
+  }
+
+  &__link {
+    color: #56b280;
+    text-decoration: underline;
+  }
+}

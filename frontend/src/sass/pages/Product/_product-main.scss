@@ -42,12 +42,6 @@
     }
     display: none;
   }
-  &__description.hide-on-mobile {
-    @include m.breakpoint(small-only) {
-      display: none;
-    }
-    display: block;
-  }
 
   &__name {
     font-size: f.rem(28);
@@ -59,12 +53,6 @@
       margin-bottom: f.rem(20);
     }
     display: none;
-  }
-  &__name.hide-on-mobile {
-    @include m.breakpoint(small-only) {
-      display: none;
-    }
-    display: block;
   }
 
   &__price {

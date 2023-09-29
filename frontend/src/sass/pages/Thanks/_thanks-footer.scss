@@ -1,0 +1,27 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.thanks-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: f.rem(25);
+
+  @include m.breakpoint(medium) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  &__button {
+    padding-block: f.rem(5);
+    padding-inline: f.rem(44);
+    @include m.breakpoint(medium) {
+      width: auto;
+    }
+  }
+
+  &__link {
+    color: #56b280;
+    text-decoration: underline;
+  }
+}

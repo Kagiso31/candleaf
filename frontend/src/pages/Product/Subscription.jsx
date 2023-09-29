@@ -7,7 +7,7 @@ const Subscription = () => {
           <input
             className="subscription__radio"
             type="radio"
-            name="subsciption"
+            name="subscription"
             id="oneTime"
           />
           <span className="checkmark"></span>
@@ -21,7 +21,7 @@ const Subscription = () => {
             <input
               className="subscription__radio"
               type="radio"
-              name="subsciption"
+              name="subscription"
               id="subscribe"
             />
             <span className="checkmark"></span>

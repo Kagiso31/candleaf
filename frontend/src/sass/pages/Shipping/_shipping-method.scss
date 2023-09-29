@@ -1,0 +1,74 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.shipping-method {
+  &__heading {
+    margin-bottom: f.rem(23);
+
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(20);
+    font-weight: 500;
+  }
+
+  &__container {
+    border-radius: 7px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    padding: f.rem(22);
+  }
+
+  /* The container */
+  &__label {
+    position: relative;
+    padding-left: f.rem(48);
+    padding-right: f.rem(6);
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(14);
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox button */
+  &__label &__checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom checkbox button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 3px solid #dbdbdb;
+  }
+
+  /* On mouse-over, add a grey background color */
+  &__label:hover &__checkbox ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox button is checked, add a blue background */
+  &__label &__checkbox:checked ~ .checkmark {
+    background-color: #56b280;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  &__label &__checkbox:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  &__checkbox {
+  }
+
+  &__price {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(14);
+    font-weight: 700;
+  }
+}

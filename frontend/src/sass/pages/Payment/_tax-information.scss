@@ -1,0 +1,26 @@
+@use "../../abstracts/functions" as f;
+@use "../../abstracts/mixins" as m;
+
+.tax {
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: f.rem(20);
+    font-weight: 500;
+    margin-bottom: f.rem(23);
+  }
+
+  &__form {
+    display: grid;
+    gap: f.rem(12);
+  }
+
+  &__input {
+    width: 100%;
+    border: 0.5px solid #898989;
+    padding: f.rem(7) f.rem(17);
+    color: #616161;
+    font-family: "Helvetica", sans-serif;
+    font-size: f.rem(14);
+    font-weight: 400;
+  }
+}
