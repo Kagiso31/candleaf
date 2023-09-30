@@ -48,6 +48,11 @@
   &__table-cell:last-child {
     justify-self: end;
   }
+  &__table-cell.hide-on-mobile {
+    @include m.breakpoint(medium) {
+      display: block;
+    }
+  }
 
   &__product-row {
     display: grid;
@@ -115,6 +120,12 @@
     font-size: f.rem(18);
     font-weight: 500;
     justify-self: end;
+
+    &.hide-on-mobile {
+      @include m.breakpoint(medium) {
+        display: block;
+      }
+    }
   }
   &__checkout-section {
     display: flex;

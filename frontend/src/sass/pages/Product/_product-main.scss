@@ -34,25 +34,35 @@
       color: #56b280;
       text-transform: uppercase;
     }
-  }
-  &__description.mobile-only {
-    @include m.breakpoint(small-only) {
-      display: block;
-      margin-top: f.rem(35);
+    &.mobile-only {
+      @include m.breakpoint(small-only) {
+        display: block;
+        margin-top: f.rem(35);
+      }
+      display: none;
     }
-    display: none;
+    &.hide-on-mobile {
+      @include m.breakpoint(medium) {
+        display: block;
+      }
+    }
   }
 
   &__name {
     font-size: f.rem(28);
     font-weight: 500;
-  }
-  &__name.mobile-only {
-    @include m.breakpoint(small-only) {
-      display: block;
-      margin-bottom: f.rem(20);
+    &.mobile-only {
+      @include m.breakpoint(small-only) {
+        display: block;
+        margin-bottom: f.rem(20);
+      }
+      display: none;
     }
-    display: none;
+    &.hide-on-mobile {
+      @include m.breakpoint(medium) {
+        display: block;
+      }
+    }
   }
 
   &__price {
