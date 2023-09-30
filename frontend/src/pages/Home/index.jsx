@@ -1,15 +1,13 @@
-import Navbar from "../../components/Navbar";
+import Navbar from "../../layout/Navbar";
 import Benefits from "./Benefits";
 import Hero from "./Hero";
 import Popular from "./Popular";
 import Products from "./Products";
 import Testimonials from "./Testimonials";
-import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <main>
         <Hero />
         <Products />
@@ -17,7 +15,6 @@ const Home = () => {
         <Testimonials />
         <Popular />
       </main>
-      <Footer />
     </>
   );
 };

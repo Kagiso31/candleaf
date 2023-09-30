@@ -1,5 +1,11 @@
-import { Route, Routes } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+
+// pages
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -9,21 +15,32 @@ import Shipping from "./pages/Shipping";
 import Payment from "./pages/Payment";
 import Thanks from "./pages/Thanks";
 
+// layouts
+import RootLayout from "./layout/RootLayout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/candleaf" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="cart" element={<Cart />} />
+
+      <Route path="products">
+        <Route path=":id" element={<Product />} />
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  )
+);
+
 const App = () => {
   return (
     <>
+      <RouterProvider router={router} />
       {/* <Thanks /> */}
       {/* <Payment /> */}
       {/* <Shipping /> */}
       {/* <Authentication /> */}
-      <ScrollToTop />
-      <Routes>
-        <Route index path="/candleaf" element={<Home />} />
-        <Route path="/candleaf/products/:id" element={<Product />} />
-        <Route path="/candleaf/cart" element={<Cart />} />
-        <Route path="/candleaf/not-found" element={<NotFound />} />
-        <Route path="/candleaf/*" element={<NotFound />} />
-      </Routes>
     </>
   );
 };

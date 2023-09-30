@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar";
+import Navbar from "../../layout/Navbar";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Summary from "../../components/Summary";
 import Confirmation from "./Confirmation";

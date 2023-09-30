@@ -1,5 +1,5 @@
 import Breadcrumbs from "../../components/Breadcrumbs";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../layout/Navbar";
 import Summary from "../../components/Summary";
 import PaymentMethod from "./PaymentMethod";
 import TaxInformations from "./TaxInformation";

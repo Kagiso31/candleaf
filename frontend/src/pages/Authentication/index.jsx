@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar";
+import Navbar from "../../layout/Navbar";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Contact from "./Contact";
 import ShippingAddress from "./ShippingAddress";
