@@ -1,0 +1,28 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.breadcrumbs {
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: f.rem(10);
+  }
+
+  &__icon {
+    height: 10px;
+    width: 10px;
+  }
+
+  &__link {
+    font-weight: 600;
+
+    &:not([aria-current="page"]) {
+      color: #616161;
+      font-weight: 400;
+    }
+  }
+
+  &__link--active {
+    color: #56b280;
+  }
+}
