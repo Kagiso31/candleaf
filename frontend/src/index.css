@@ -163,6 +163,16 @@ button {
     justify-content: flex-start;
   }
 }
+@media (min-width: 40em) {
+  .logo-container-mobile {
+    justify-content: center;
+  }
+}
+@media (min-width: 64em) {
+  .logo-container-mobile {
+    justify-content: flex-start;
+  }
+}
 .logo-container .logo {
   max-width: 126px;
 }
@@ -375,6 +385,14 @@ button {
   font-size: 0.875rem;
 }
 
+.breadcrumbs {
+  padding-inline: 0.9375rem;
+}
+@media (min-width: 64em) {
+  .breadcrumbs {
+    padding-inline: 0;
+  }
+}
 .breadcrumbs__nav {
   display: flex;
   align-items: center;
@@ -423,6 +441,27 @@ button {
   justify-content: flex-end;
   gap: 0.9375rem;
   order: 3;
+}
+.primary-header__right .cart-icon-container {
+  position: relative;
+}
+.primary-header__right .cart-icon-quantity {
+  width: 11px;
+  height: 11px;
+  padding: 0.4375rem;
+  background-color: #56b280;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 500;
 }
 .primary-header__right .cart-icon {
   width: 23px;
@@ -576,12 +615,28 @@ button {
 }
 .summary__wrapper {
   max-width: 450px;
+  margin-inline: auto;
+}
+@media (min-width: 64em) {
+  .summary__wrapper {
+    margin-inline: 0;
+  }
 }
 .summary__product {
   display: flex;
-  gap: 3.75rem;
-  padding-bottom: 3.3125rem;
+  gap: 0.75rem;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1.3125rem;
   border-bottom: 1px solid rgba(86, 178, 128, 0.2);
+}
+@media (min-width: 64em) {
+  .summary__product {
+    align-items: start;
+    flex-direction: row;
+    padding-bottom: 3.3125rem;
+    gap: 3.75rem;
+  }
 }
 .summary__image-container {
   width: fit-content;
@@ -609,7 +664,14 @@ button {
 .summary__product-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.25rem;
+}
+@media (min-width: 64em) {
+  .summary__product-info {
+    align-items: start;
+    gap: 0.25rem;
+  }
 }
 .summary__product-name {
   font-weight: 500;
@@ -643,6 +705,14 @@ button {
   font-family: "Roboto", sans-serif;
   font-size: 1.103125rem;
 }
+.summary__coupon-button::after {
+  content: "Add code";
+}
+@media (max-width: 39.99875em) {
+  .summary__coupon-button::after {
+    content: "Add";
+  }
+}
 .summary__subtotal-container {
   display: flex;
   justify-content: space-between;
@@ -656,19 +726,101 @@ button {
   padding-bottom: 2.0625rem;
   border-bottom: 1px solid rgba(86, 178, 128, 0.2);
 }
-.summary__shipping-text, .summary__shipping-amount, .summary__subtotal-amount, .summary__subtotal-text, .summary__total-text {
+.summary__paid-container {
+  color: #56b280;
+}
+.summary__shipping-text, .summary__shipping-amount, .summary__subtotal-amount, .summary__subtotal-text, .summary__total-text, .summary__paid-text {
   font-family: "Roboto", sans-serif;
   font-size: 0.875rem;
 }
-.summary__total-container {
+.summary__total-container, .summary__paid-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 0.9375rem;
 }
-.summary__total-amount {
+.summary__total-amount, .summary__paid-amount {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
+}
+.summary-mobile {
+  background-color: #f2f2f2;
+  padding: 1.875rem 0.9375rem;
+  margin-bottom: 2.125rem;
+}
+.summary-mobile__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+@media (min-width: 64em) {
+  .summary-mobile {
+    display: none;
+  }
+}
+.summary-mobile__icon-container {
+  position: relative;
+}
+.summary-mobile__cart-icon {
+  width: 28px;
+  height: 28px;
+}
+.summary-mobile__cart-icon--green path {
+  fill: #56b280;
+}
+.summary-mobile__quantity {
+  width: 11px;
+  height: 11px;
+  padding: 0.4375rem;
+  background-color: #56b280;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+.summary-mobile__dropdown-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  gap: 0.5625rem;
+  flex: 1;
+  cursor: pointer;
+}
+.summary-mobile__dropdown-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  color: #56b280;
+  font-weight: 400;
+}
+.summary-mobile__dropdown-icon {
+  width: 20px;
+  height: 20px;
+}
+.summary-mobile__dropdown-icon path {
+  fill: #56b280;
+}
+.summary-mobile__dropdown-content {
+  margin-top: 2.5rem;
+}
+.summary-mobile__price {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.summary-mobile__order-paid-text {
+  text-transform: uppercase;
+  color: #56b280;
+  font-size: 1.25rem;
 }
 
 .form__details {

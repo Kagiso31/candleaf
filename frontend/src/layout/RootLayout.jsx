@@ -1,6 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import Breadcrumbs from "../components/Breadcrumbs";
 import Footer from "./Footer";
 import ScrollToTop from "../ScrollToTop";
 
@@ -12,7 +11,6 @@ const RootLayout = () => {
       <>
         <ScrollToTop />
         <Navbar />
-        <Breadcrumbs />
         <Outlet />
       </>
     );

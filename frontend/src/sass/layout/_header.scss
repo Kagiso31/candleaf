@@ -31,6 +31,30 @@
     gap: f.rem(15);
     order: 3;
 
+    .cart-icon-container {
+      position: relative;
+    }
+
+    .cart-icon-quantity {
+      width: 11px;
+      height: 11px;
+      padding: f.rem(7);
+      background-color: #56b280;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(50%) translateY(-50%);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-family: "Roboto", sans-serif;
+      font-size: f.rem(10);
+      font-weight: 500;
+    }
+
     .cart-icon {
       width: 23px;
       height: 23px;

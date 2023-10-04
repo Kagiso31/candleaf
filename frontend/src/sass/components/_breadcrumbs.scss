@@ -2,6 +2,10 @@
 @use "../abstracts/mixins" as m;
 
 .breadcrumbs {
+  padding-inline: f.rem(15);
+  @include m.breakpoint(large) {
+    padding-inline: 0;
+  }
   &__nav {
     display: flex;
     align-items: center;

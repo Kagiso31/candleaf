@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Summary from "../../components/Summary";
 import { useLocation, useNavigate } from "react-router-dom";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const INITIAL_DATA = {
   // personal details
@@ -100,30 +101,34 @@ const MultiStepForm = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <div className="form__grid | wrapper">
-        <article className="form__details">
-          <Outlet context={[data, updateFields]} />
-          {currentPage !== thanksPage && (
-            <div className="form__footer">
-              <button className="form__button btn btn-lg" type="submit">
-                {currentPage === authenticationPage && "Go to shipping"}
-                {currentPage === shippingPage && "Go to payment"}
-                {currentPage === paymentPage && "Pay now"}
-              </button>
-              <button type="button" className="form__link" onClick={prevPage}>
-                {currentPage === authenticationPage && "Back to cart"}
-                {currentPage === shippingPage && "Back to details"}
-                {currentPage === paymentPage && "Back to shipping"}
-              </button>
-            </div>
-          )}
-        </article>
-        <article>
-          <Summary {...data} updateFields={updateFields} />
-        </article>
-      </div>
-    </form>
+    <section className="form">
+      <Summary viewport="mobile" {...data} updateFields={updateFields} />
+      <Breadcrumbs />
+      <form onSubmit={handleSubmit}>
+        <div className="form__grid | wrapper">
+          <article className="form__details">
+            <Outlet context={[data, updateFields]} />
+            {currentPage !== thanksPage && (
+              <div className="form__footer">
+                <button className="form__button btn btn-lg" type="submit">
+                  {currentPage === authenticationPage && "Go to shipping"}
+                  {currentPage === shippingPage && "Go to payment"}
+                  {currentPage === paymentPage && "Pay now"}
+                </button>
+                <button type="button" className="form__link" onClick={prevPage}>
+                  {currentPage === authenticationPage && "Back to cart"}
+                  {currentPage === shippingPage && "Back to details"}
+                  {currentPage === paymentPage && "Back to shipping"}
+                </button>
+              </div>
+            )}
+          </article>
+          <article>
+            <Summary viewport="desktop" {...data} updateFields={updateFields} />
+          </article>
+        </div>
+      </form>
+    </section>
   );
 };
 

@@ -13,6 +13,15 @@
     justify-content: flex-start;
   }
 
+  &-mobile {
+    @include m.breakpoint(medium) {
+      justify-content: center;
+    }
+    @include m.breakpoint(large) {
+      justify-content: flex-start;
+    }
+  }
+
   .logo {
     max-width: 126px;
   }
