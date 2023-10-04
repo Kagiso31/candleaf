@@ -1,4 +1,4 @@
-const BillingAddress = () => {
+const BillingAddress = ({ billingaddress, updateFields }) => {
   return (
     <section className="billing">
       <h2 className="billing__title">Billing Address</h2>
@@ -7,10 +7,13 @@ const BillingAddress = () => {
           <label className="billing__label" htmlFor="sameAddress">
             Same as the shipping address
             <input
+              id="sameAddress"
               className="billing__radio"
               type="radio"
               name="billing"
-              id="sameAddress"
+              value="same"
+              checked={billingaddress === "same"}
+              onChange={(e) => updateFields({ billingaddress: e.target.value })}
             />
             <span className="checkmark"></span>
           </label>
@@ -23,7 +26,10 @@ const BillingAddress = () => {
               className="billing__radio"
               type="radio"
               name="billing"
+              value="different"
               id="differentAddress"
+              checked={billingaddress === "different"}
+              onChange={(e) => updateFields({ billingaddress: e.target.value })}
             />
             <span className="checkmark"></span>
           </label>

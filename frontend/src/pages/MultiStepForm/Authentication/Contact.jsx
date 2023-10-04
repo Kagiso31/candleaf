@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Contact = () => {
+const Contact = ({ contact, addToNewsletter, updateFields }) => {
   return (
     <section className="contact">
       <div className="contact__heading">
@@ -9,16 +9,20 @@ const Contact = () => {
           Do you have an account? <Link>Login</Link>
         </p>
       </div>
-      <form className="contact__form">
+      <div className="contact__form">
         <div className="contact__form-group">
           <label className="visually-hidden" htmlFor="contact">
             Email or mobile phone number
           </label>
           <input
+            id="contact"
             className="contact__contact-input"
             type="text"
             placeholder="Email or mobile phone number"
-            id="contact"
+            name="contact"
+            value={contact}
+            onChange={(e) => updateFields({ contact: e.target.value })}
+            required
           />
         </div>
 
@@ -28,12 +32,17 @@ const Contact = () => {
             type="checkbox"
             id="newsletter"
             name="newsletter"
+            value="newsletter"
+            checked={addToNewsletter}
+            onChange={(e) =>
+              updateFields({ addToNewsletter: e.target.checked })
+            }
           />
           <label className="contact__newsletter-label" htmlFor="newsletter">
             Add me to the Candleaf newsletter for a 10% discount
           </label>
         </div>
-      </form>
+      </div>
     </section>
   );
 };

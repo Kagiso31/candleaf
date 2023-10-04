@@ -18,13 +18,6 @@
     margin-block: f.rem(20);
     border-top: 1px solid #81818140;
   }
-  &__same-address {
-  }
-  &__radio {
-  }
-
-  &__different-address {
-  }
 
   /* The container */
   &__label {
@@ -61,13 +54,8 @@
     background-color: #ccc;
   }
 
-  /* When the radio button is checked, add a blue background */
+  /* When the radio button is checked, add a green background */
   &__label &__radio:checked ~ .checkmark {
     background-color: #56b280;
-  }
-
-  /* Show the indicator (dot/circle) when checked */
-  &__label &__radio:checked ~ .checkmark:after {
-    display: block;
   }
 }

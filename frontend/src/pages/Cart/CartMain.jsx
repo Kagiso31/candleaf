@@ -31,9 +31,11 @@ const CartMain = () => {
           </p>
         </div>
 
-        <button type="button" className="cart__button btn btn-lg">
-          Checkout
-        </button>
+        <Link to="/candleaf/cart/details">
+          <button type="button" className="cart__button btn btn-lg">
+            Checkout
+          </button>
+        </Link>
       </div>
     </main>
   );

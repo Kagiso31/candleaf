@@ -1,0 +1,50 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.form {
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: f.rem(60);
+
+    @include m.breakpoint(large) {
+      width: 500px;
+    }
+  }
+  &__grid {
+    padding-inline: f.rem(15);
+    padding-bottom: f.rem(60);
+
+    @include m.breakpoint(large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-inline: 0;
+      padding-bottom: 0;
+    }
+  }
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: f.rem(25);
+
+    @include m.breakpoint(medium) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__button {
+    padding-block: f.rem(5);
+    padding-inline: f.rem(44);
+    @include m.breakpoint(medium) {
+      width: auto;
+    }
+  }
+
+  &__link {
+    color: #56b280;
+    text-decoration: underline;
+    background: transparent;
+  }
+}

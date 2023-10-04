@@ -1,4 +1,10 @@
-const PaymentMethod = () => {
+const PaymentMethod = ({
+  cardnumber,
+  holdername,
+  expiration,
+  cvv,
+  updateFields,
+}) => {
   return (
     <section className="payment-method">
       <h2 className="payment-method__title">Payment Method</h2>
@@ -14,17 +20,21 @@ const PaymentMethod = () => {
         <h3 className="payment-method__card-heading">Credit Card</h3>
       </div>
       <div className="payment-method__card">
-        <form className="payment-method__form">
+        <div className="payment-method__form">
           <div className="payment-method__form-group">
-            <label className="visually-hidden" htmlFor="cardNumber">
+            <label className="visually-hidden" htmlFor="cardnumber">
               Card Number
             </label>
             <div>
               <input
+                id="cardnumber"
                 className="payment-method__input"
-                id="cardNumber"
                 type="text"
                 placeholder="Card Number"
+                name="cardnumber"
+                value={cardnumber}
+                onChange={(e) => updateFields({ cardnumber: e.target.value })}
+                required
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,14 +48,18 @@ const PaymentMethod = () => {
           </div>
 
           <div className="payment-method__form-group">
-            <label className="visually-hidden" htmlFor="holderName">
+            <label className="visually-hidden" htmlFor="holdername">
               Holder Name
             </label>
             <input
+              id="holdername"
               className="payment-method__input | no-icon"
-              id="holderName"
               type="text"
               placeholder="Holder Name"
+              name="holdername"
+              value={holdername}
+              onChange={(e) => updateFields({ holdername: e.target.value })}
+              required
             />
           </div>
 
@@ -54,10 +68,14 @@ const PaymentMethod = () => {
               Expiration (MM/YYYY)
             </label>
             <input
-              className="payment-method__input | no-icon"
               id="expiration"
+              className="payment-method__input | no-icon"
               type="text"
               placeholder="Expiration (MM/YYYY)"
+              name="expiration"
+              value={expiration}
+              onChange={(e) => updateFields({ expiration: e.target.value })}
+              required
             />
           </div>
 
@@ -67,10 +85,14 @@ const PaymentMethod = () => {
             </label>
             <div>
               <input
-                className="payment-method__input"
                 id="cvv"
+                className="payment-method__input"
                 type="number"
                 placeholder="CVV"
+                name="cvv"
+                value={cvv}
+                onChange={(e) => updateFields({ cvv: e.target.value })}
+                required
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +104,7 @@ const PaymentMethod = () => {
               </svg>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );

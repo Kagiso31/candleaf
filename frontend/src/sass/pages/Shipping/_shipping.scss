@@ -2,23 +2,7 @@
 @use "../../abstracts/mixins" as m;
 
 .shipping {
-  padding-inline: f.rem(15);
-  padding-bottom: f.rem(60);
-
-  @include m.breakpoint(large) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-inline: 0;
-    padding-bottom: 0;
-  }
-
-  &__details {
-    display: flex;
-    flex-direction: column;
-    gap: f.rem(40);
-
-    @include m.breakpoint(large) {
-      width: 500px;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  gap: f.rem(40);
 }

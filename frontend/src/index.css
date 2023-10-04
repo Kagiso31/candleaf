@@ -651,6 +651,55 @@ button {
   font-weight: 500;
 }
 
+.form__details {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}
+@media (min-width: 64em) {
+  .form__details {
+    width: 500px;
+  }
+}
+.form__grid {
+  padding-inline: 0.9375rem;
+  padding-bottom: 3.75rem;
+}
+@media (min-width: 64em) {
+  .form__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-inline: 0;
+    padding-bottom: 0;
+  }
+}
+.form__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5625rem;
+}
+@media (min-width: 40em) {
+  .form__footer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+.form__button {
+  padding-block: 0.3125rem;
+  padding-inline: 2.75rem;
+}
+@media (min-width: 40em) {
+  .form__button {
+    width: auto;
+  }
+}
+.form__link {
+  color: #56b280;
+  text-decoration: underline;
+  background: transparent;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -842,26 +891,9 @@ button {
 }
 
 .auth {
-  padding-inline: 0.9375rem;
-  padding-bottom: 3.75rem;
-}
-@media (min-width: 64em) {
-  .auth {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-inline: 0;
-    padding-bottom: 0;
-  }
-}
-.auth__info {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-}
-@media (min-width: 64em) {
-  .auth__info {
-    width: 500px;
-  }
 }
 
 .cart {
@@ -1292,26 +1324,9 @@ button {
 }
 
 .payment {
-  padding-inline: 0.9375rem;
-  padding-bottom: 3.75rem;
-}
-@media (min-width: 64em) {
-  .payment {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-inline: 0;
-    padding-bottom: 5.5rem;
-  }
-}
-.payment__details {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-}
-@media (min-width: 64em) {
-  .payment__details {
-    width: 500px;
-  }
 }
 
 .payment-method__title {
@@ -1429,8 +1444,7 @@ button {
   /* Hide the browser's default radio button */
   /* Create a custom radio button */
   /* On mouse-over, add a grey background color */
-  /* When the radio button is checked, add a blue background */
-  /* Show the indicator (dot/circle) when checked */
+  /* When the radio button is checked, add a green background */
 }
 .billing__title {
   font-family: "Roboto", sans-serif;
@@ -1476,35 +1490,6 @@ button {
 }
 .billing__label .billing__radio:checked ~ .checkmark {
   background-color: #56b280;
-}
-.billing__label .billing__radio:checked ~ .checkmark:after {
-  display: block;
-}
-
-.payment-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5625rem;
-}
-@media (min-width: 40em) {
-  .payment-footer {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-}
-.payment-footer__button {
-  padding-block: 0.3125rem;
-  padding-inline: 2.75rem;
-}
-@media (min-width: 40em) {
-  .payment-footer__button {
-    width: auto;
-  }
-}
-.payment-footer__link {
-  color: #56b280;
-  text-decoration: underline;
 }
 
 .subscription {
@@ -1721,26 +1706,9 @@ button {
 }
 
 .shipping {
-  padding-inline: 0.9375rem;
-  padding-bottom: 3.75rem;
-}
-@media (min-width: 64em) {
-  .shipping {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-inline: 0;
-    padding-bottom: 0;
-  }
-}
-.shipping__details {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-}
-@media (min-width: 64em) {
-  .shipping__details {
-    width: 500px;
-  }
 }
 
 .shipping-method {
@@ -1748,8 +1716,7 @@ button {
   /* Hide the browser's default checkbox button */
   /* Create a custom checkbox button */
   /* On mouse-over, add a grey background color */
-  /* When the checkbox button is checked, add a blue background */
-  /* Show the indicator (dot/circle) when checked */
+  /* When the checkbox button is checked, add a green background */
 }
 .shipping-method__heading {
   margin-bottom: 1.4375rem;
@@ -1794,62 +1761,16 @@ button {
 .shipping-method__label .shipping-method__checkbox:checked ~ .checkmark {
   background-color: #56b280;
 }
-.shipping-method__label .shipping-method__checkbox:checked ~ .checkmark:after {
-  display: block;
-}
 .shipping-method__price {
   font-family: "Roboto", sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
 }
 
-.shipping-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5625rem;
-}
-@media (min-width: 40em) {
-  .shipping-footer {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-}
-.shipping-footer__button {
-  padding-block: 0.3125rem;
-  padding-inline: 2.75rem;
-}
-@media (min-width: 40em) {
-  .shipping-footer__button {
-    width: auto;
-  }
-}
-.shipping-footer__link {
-  color: #56b280;
-  text-decoration: underline;
-}
-
 .thanks {
-  padding-inline: 0.9375rem;
-  padding-bottom: 3.75rem;
-}
-@media (min-width: 64em) {
-  .thanks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-inline: 0;
-    padding-bottom: 0;
-  }
-}
-.thanks__details {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-}
-@media (min-width: 64em) {
-  .thanks__details {
-    width: 500px;
-  }
 }
 
 .confirmation {
@@ -1889,13 +1810,11 @@ button {
 .thanks-footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1.5625rem;
 }
 @media (min-width: 40em) {
   .thanks-footer {
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    align-items: center;
   }
 }
 .thanks-footer__button {
@@ -1910,6 +1829,7 @@ button {
 .thanks-footer__link {
   color: #56b280;
   text-decoration: underline;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=index.css.map */

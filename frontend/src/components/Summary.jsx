@@ -1,4 +1,4 @@
-const Summary = () => {
+const Summary = ({ couponcode, updateFields }) => {
   return (
     <div className="summary | hide-on-mobile">
       <div className="summary__wrapper">
@@ -18,9 +18,12 @@ const Summary = () => {
         </div>
         <div className="summary__coupon-container">
           <input
+            id="coupon"
             className="summary__coupon-input"
             type="text"
             placeholder="Coupon code"
+            value={couponcode}
+            onChange={(e) => updateFields({ couponcode: e.target.value })}
           />
           <button className="summary__coupon-button" type="button">
             Add code

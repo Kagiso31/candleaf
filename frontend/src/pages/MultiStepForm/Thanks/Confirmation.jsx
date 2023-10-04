@@ -1,4 +1,4 @@
-const Confirmation = () => {
+const Confirmation = ({ firstname }) => {
   return (
     <section className="confirmation">
       <svg
@@ -13,9 +13,9 @@ const Confirmation = () => {
       <h1 className="confirmation__title">Payment Confirmed</h1>
       <h2 className="confirmation__subtitle">Order #2039</h2>
       <p className="confirmation__message">
-        Thank you Joe for buying Candleaf. The nature is grateful to you. Now
-        that your order is confirmed, it will be ready to ship in 2 days. Please
-        check your inbox in the future for your order updates.
+        Thank you {firstname} for buying Candleaf. The nature is grateful to
+        you. Now that your order is confirmed, it will be ready to ship in 2
+        days. Please check your inbox in the future for your order updates.
       </p>
     </section>
   );

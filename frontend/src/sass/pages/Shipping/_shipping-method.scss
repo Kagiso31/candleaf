@@ -53,17 +53,9 @@
     background-color: #ccc;
   }
 
-  /* When the checkbox button is checked, add a blue background */
+  /* When the checkbox button is checked, add a green background */
   &__label &__checkbox:checked ~ .checkmark {
     background-color: #56b280;
-  }
-
-  /* Show the indicator (dot/circle) when checked */
-  &__label &__checkbox:checked ~ .checkmark:after {
-    display: block;
-  }
-
-  &__checkbox {
   }
 
   &__price {
