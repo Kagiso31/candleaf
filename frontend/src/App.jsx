@@ -19,6 +19,9 @@ import Payment from "./pages/MultiStepForm/Payment";
 import Thanks from "./pages/MultiStepForm/Thanks";
 import Authentication from "./pages/MultiStepForm/Authentication";
 
+// context
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/candleaf" element={<RootLayout />}>
@@ -51,9 +54,9 @@ const router = createBrowserRouter(
 
 const App = () => {
   return (
-    <>
+    <ShoppingCartProvider>
       <RouterProvider router={router} />
-    </>
+    </ShoppingCartProvider>
   );
 };
 

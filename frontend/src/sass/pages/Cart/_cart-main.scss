@@ -69,11 +69,12 @@
 
   &__product {
     display: flex;
+    justify-self: start;
   }
 
   &__product-image-container {
     max-width: 160px;
-    padding-inline: f.rem(12);
+    padding-right: f.rem(12);
   }
 
   &__product-image {
@@ -92,6 +93,7 @@
     font-size: f.rem(18);
     color: #56b280;
     text-decoration: underline;
+    cursor: pointer;
   }
 
   &__product-price {

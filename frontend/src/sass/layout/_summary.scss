@@ -7,8 +7,9 @@
   width: 50vw;
   right: 0;
   top: 0;
-  bottom: 0;
+  // bottom: 0;
   padding: f.rem(65);
+  padding-top: f.rem(12);
 
   &__wrapper {
     max-width: 450px;
@@ -24,13 +25,13 @@
     gap: f.rem(12);
     align-items: center;
     flex-direction: column;
-    padding-bottom: f.rem(21);
+    padding-block: f.rem(21);
     border-bottom: 1px solid rgba(86, 178, 128, 0.2);
 
     @include m.breakpoint(large) {
       align-items: start;
       flex-direction: row;
-      padding-bottom: f.rem(53);
+      padding-block: f.rem(53);
       gap: f.rem(60);
     }
   }
@@ -76,6 +77,11 @@
   &__product-name {
     font-weight: 500;
     font-family: "Poppins", sans-serif;
+    text-align: center;
+
+    @include m.breakpoint(large) {
+      text-align: left;
+    }
   }
 
   &__product-price {
@@ -195,7 +201,7 @@
     &__quantity {
       width: 11px;
       height: 11px;
-      padding: f.rem(7);
+      padding: f.rem(10);
       background-color: #56b280;
       border-radius: 50%;
       position: absolute;
@@ -208,7 +214,7 @@
       align-items: center;
 
       font-family: "Roboto", sans-serif;
-      font-size: f.rem(10);
+      font-size: f.rem(14);
       font-weight: 500;
     }
 

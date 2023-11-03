@@ -2,10 +2,14 @@ import { useParams, Navigate } from "react-router-dom";
 import Quantity from "../../components/Quantity";
 import Subscription from "./Subscription";
 import { products } from "../../data/data";
+import { useState } from "react";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 
 const ProductMain = () => {
   const { id } = useParams();
   const product = products.find((product) => product.id === parseInt(id));
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useShoppingCart();
 
   if (!product) return <Navigate to="/candleaf/not-found" />;
 
@@ -37,13 +41,17 @@ const ProductMain = () => {
             <p className="product__price">${product.price}</p>
             <div className="product__quantity">
               <p className="product__quantity__text">Quantity</p>
-              <Quantity />
+              <Quantity quantity={quantity} setQuantity={setQuantity} />
             </div>
           </div>
           <Subscription />
         </div>
         <div className="product__button-container">
-          <button className="product__button btn btn-lg">
+          <button
+            className="product__button btn btn-lg"
+            type="button"
+            onClick={() => addToCart(parseInt(id), quantity)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
